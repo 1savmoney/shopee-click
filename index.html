@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Copy and Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .message {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        function copyAndRedirect() {
+            const textToCopy = "SCNOV01"; // 替換成你要複製的內容
+            const redirectUrl = "https://s.shopee.tw/2LHEFv7d0X"; // 替換成目標網址
+
+            // 自動複製文字
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                console.log("文字已複製到剪貼簿");
+                // 無延遲直接跳轉
+                window.location.href = redirectUrl;
+            }).catch(err => {
+                alert("複製失敗：" + err);
+            });
+        }
+    </script>
+</head>
+<body onload="copyAndRedirect()">
+    <div class="message">
+        <h2>處理中，請稍候...</h2>
+        <p>系統正在複製文字並準備跳轉。</p>
+    </div>
+</body>
+</html>
